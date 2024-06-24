@@ -1,8 +1,10 @@
-# React + Vite
+# Solo Spike
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This was a practice in learning more about some technologies that I'd like to encorporate into my solo app sprint.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Multer, csvtojson, chart.js
+
+multer to handle file upload, csvtojson to parse the files from the memory buffer, and then delete the file after the data has been sent to the db to update a table.
+
+chart.js to do data visualization with dynamic charts.
