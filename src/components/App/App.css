@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+.chart-container {
+  width: 90%;
+  max-width: 1500px;
+  height: 500px;
+  margin: 0 auto;
+}

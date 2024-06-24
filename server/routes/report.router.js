@@ -23,6 +23,27 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get('/:id', (req,res)=>{
+    let queryText = `
+    SELECT
+        "total_tickets_sold",
+        "total_presale_sold",
+        "total_beer_sold",
+        "total_liquor_sold",
+        "total_other_sold"
+    FROM "show_reports"
+    WHERE "id" = $1;
+    `
+    pool.query(queryText, [req.params.id])
+        .then(response=>{
+            res.send(response.rows)
+        })
+        .catch(err=>{
+            console.log('Error in GET route', err)
+            res.sendStatus(500)
+        })
+})
+
 router.put("/update/:id", upload.single("file"), async (req, res) => {
   if (!req.file) {
     return res.status(400).send("No file uploaded");

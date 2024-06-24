@@ -1,5 +1,7 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import { useSelector } from "react-redux"
+import { formatDate, formatTime } from "../../dateUtils";
+
 
 
 const ShowReport = ()=>{
@@ -9,10 +11,11 @@ const ShowReport = ()=>{
    
     return(
         <>
-        <h2>Report Data will go here</h2>
+        <h2>Report Data for View of DB</h2>
         <table>
             <thead>
                 <tr>
+                    <th></th>
                     <th>Band</th>
                     <th>Date</th>
                     <th>Door Time</th>
@@ -28,8 +31,9 @@ const ShowReport = ()=>{
             <tbody>
                 {reports.map((report)=>
                     <tr key={report.id}>
+                        <td><button onClick={()=>history.push(`/details/${report.id}`)}>Details</button></td>
                         <td>{report.band_id}</td>
-                        <td>{report.show_date}</td>
+                        <td>{formatDate(report.show_date)}</td>
                         <td>{report.door_time}</td>
                         <td>{report.age_restrictions}</td>
                         <td>{report.total_tickets_sold}</td>
@@ -42,8 +46,6 @@ const ShowReport = ()=>{
                 )}
             </tbody>
         </table>
-
-        <h3>Chart here eventually</h3>
         </>
     )
 }
